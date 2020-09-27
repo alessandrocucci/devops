@@ -1,0 +1,2 @@
+docker build --tag devops:1.0 -f devops/Dockerfile .
+docker run -it devops:1.0 
