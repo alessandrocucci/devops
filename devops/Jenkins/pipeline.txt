@@ -21,6 +21,13 @@ pipeline {
            }
        }
     }
+    stage('Build from Docker Compose') {
+       steps {
+           script {
+                sh "docker-compose -f devops/docker-compose.yml  up -d --build"
+           }
+       }
+    }
     stage('Test') {
       steps {
         sh 'echo "Ciao"'
