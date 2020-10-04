@@ -6,9 +6,9 @@ COPY src /source
 COPY tests /tests
 COPY setup.cfg /
 
-WORKDIR /source
+WORKDIR /
 
-COPY requirements.txt /source/requirements.txt
+COPY requirements.txt /requirements.txt
 RUN pip install -r requirements.txt
 
-CMD python run.py
+CMD python /source/run.py
