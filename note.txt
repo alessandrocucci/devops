@@ -19,3 +19,13 @@ creare chiavi per connettersi a github
 se da errore di connessione a Docker
 docker exec -ti -u root jenkins-docker /bin/bash
 chmod 666 /var/run/docker.sock
+
+installare plugin docker compose
+
+aggiungere github webhook
+https://webhookrelay.com/v1/installation/cli
+installare, registrarsi e creare token
+relay login -k token-key-here -s token-secret-here
+export RELAY_KEY=token-key
+export RELAY_SECRET=token-secret
+relay forward http://localhost:8080/github-webhook/ 
