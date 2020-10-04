@@ -5,6 +5,7 @@ RUN apt-get install -y python-pip python-dev build-essential
 COPY src /source
 COPY tests /tests
 COPY setup.cfg /
+COPY conftest.py /
 
 WORKDIR /
 
