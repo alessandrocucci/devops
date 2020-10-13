@@ -5,7 +5,8 @@
 docker build --tag devops:1.0 -f devops/Dockerfile .
 docker run -it devops:1.0 
 
-docker-compose -f devops/docker-compose.yml  up (-d) --build
+docker-compose -f devops/docker-compose.yml  up -d --build
+docker exec -it devops_website_1 /bin/bash 
 ```
 
 ## Docker Hub
@@ -49,4 +50,12 @@ relay login -k token-key-here -s token-secret-here
 export RELAY_KEY=token-key
 export RELAY_SECRET=token-secret
 relay forward http://localhost:8080/github-webhook/ 
+```
+
+## Test API insert 
+```
+curl --header "Content-Type: application/json" \
+  --request POST \
+  --data '{"partecipanti":"4"}' \
+  http://localhost/insert
 ```
