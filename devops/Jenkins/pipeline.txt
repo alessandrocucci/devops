@@ -30,7 +30,7 @@ pipeline {
     }
     stage('Test') {
       steps {
-        sh 'echo "Ciao"'
+        sh 'docker exec devops_website_1 pytest';
       }
     }
     stage('Deploy Image') {

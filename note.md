@@ -12,8 +12,8 @@ docker exec -it devops_website_1 /bin/bash
 ## Docker Hub
 ```
 docker images
-docker tag a1c6014b2ec5 devops_api:firsttry
-docker push alessandrocuccienergee3 devops_api:firsttry
+docker tag a1c6014b2ec5 alessandrocuccienergee3/devops_api:firsttry
+docker push alessandrocuccienergee3/devops_api:firsttry
 ```
 
 ## Jenkins
@@ -38,6 +38,15 @@ se da errore di connessione a Docker
 docker exec -ti -u root jenkins-docker /bin/bash
 chmod 666 /var/run/docker.sock
 ```
+
+Docker Compose
+```
+sudo curl -L "https://github.com/docker/compose/releases/download/1.27.4/docker-compose-$(uname -s)-$(uname -m)" -o /usr/local/bin/docker-compose
+
+sudo chmod +x /usr/local/bin/docker-compose
+```
+
+https://docs.docker.com/compose/install/
 
 ## Github Webhook
 
